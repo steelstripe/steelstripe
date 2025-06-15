@@ -1,0 +1,38 @@
+#!/usr/bin/env php
+<?php
+
+// Define the base path as the current working directory
+define('BASE_PATH', getcwd());
+
+// Try to load autoloader from various possible locations
+$autoloadPaths = [
+    // Standalone installation
+    BASE_PATH . '/vendor/autoload.php',
+    // Monorepo installation
+    BASE_PATH . '/../../vendor/autoload.php',
+    // Alternative monorepo path
+    BASE_PATH . '/../../../vendor/autoload.php'
+];
+
+$autoloader = null;
+foreach ($autoloadPaths as $path) {
+    if (file_exists($path)) {
+        $autoloader = $path;
+        break;
+    }
+}
+
+if ($autoloader === null) {
+    echo("base path = " . BASE_PATH);
+    die('Could not find autoloader. Please run "composer install" first.');
+}
+
+require $autoloader;
+
+use SteelStripe\Framework\Cli\Application;
+
+// Initialize the CLI application
+$app = Application::singleton();
+
+// Run the application
+$app->run();

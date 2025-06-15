@@ -6,7 +6,12 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^8.4"
+        "php": "^8.4",
+        "steelstripe/framework": "*",
+        "steelstripe/orm": "*",
+        "steelstripe/assets": "*",
+        "steelstripe/config": "*",
+        "steelstripe/versioning": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^10.0",
@@ -14,12 +19,8 @@
     },
     "autoload": {
         "psr-4": {
-            "SteelStripe\\Framework\\": "packages/framework/src/",
-            "SteelStripe\\ORM\\": "packages/orm/src/",
-            "SteelStripe\\Assets\\": "packages/assets/src/",
-            "SteelStripe\\Config\\": "packages/config/src/",
-            "SteelStripe\\Versioning\\": "packages/versioning/src/",
-            "App\\": "packages/installer/app/src/"
+            "App\\": "packages/installer/app/src/",
+            "SteelStripe\\Proxies\\": "proxies/"
         }
     },
     "autoload-dev": {
@@ -41,10 +42,13 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+            "./scripts/setup-app.sh"
         ],
         "serve": [
             "@php -S localhost:8000 -t packages/installer/public packages/installer/public/index.php"
+        ],
+        "setup-app": [
+            "./scripts/setup-app.sh"
         ]
     }
 }

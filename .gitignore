@@ -51,3 +51,11 @@ Thumbs.db
 !/packages/config/
 !/packages/versioning/
 !/packages/installer/
+
+# Generated proxy classes
+/proxies/
+
+# App files copied from installer
+/public/
+/app/
+.env
