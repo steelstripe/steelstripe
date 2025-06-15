@@ -1,0 +1,21 @@
+{
+    "name": "steelstripe/framework",
+    "description": "The core SteelStripe framework",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "autoload": {
+        "psr-4": {
+            "SteelStripe\\Framework\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.4",
+        "steelstripe/config": "*",
+        "steelstripe/orm": "*",
+        "steelstripe/assets": "*",
+        "steelstripe/versioning": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    }
+}

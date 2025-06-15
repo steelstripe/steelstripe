@@ -1,0 +1,32 @@
+---
+Name: base
+---
+# Base configuration for all environments
+
+# Environment-specific configuration
+env:
+  production:
+    debug: false
+    error_reporting: E_ALL & ~E_DEPRECATED & ~E_STRICT
+  development:
+    debug: true
+    error_reporting: E_ALL
+
+# Default timezone
+timezone: 'UTC'
+
+# Default locale
+locale: 'en'
+
+# Session configuration
+session:
+  lifetime: 120
+  secure: true
+  http_only: true
+  same_site: 'lax'
+
+# Cache configuration
+cache:
+  driver: 'file'
+  prefix: 'steelstripe_'
+  lifetime: 3600

@@ -1,0 +1,18 @@
+{
+    "name": "steelstripe/versioning",
+    "description": "Version control and management for SteelStripe",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "autoload": {
+        "psr-4": {
+            "SteelStripe\\Versioning\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.4",
+        "steelstripe/orm": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    }
+}

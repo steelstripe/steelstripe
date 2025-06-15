@@ -1,0 +1,17 @@
+{
+    "name": "steelstripe/config",
+    "description": "Configuration management for SteelStripe",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "autoload": {
+        "psr-4": {
+            "SteelStripe\\Config\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^8.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "name": "steelstripe/root",
+    "description": "SteelStripe Framework - A modern PHP framework",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "friendsofphp/php-cs-fixer": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SteelStripe\\Framework\\": "packages/framework/src/",
+            "SteelStripe\\ORM\\": "packages/orm/src/",
+            "SteelStripe\\Assets\\": "packages/assets/src/",
+            "SteelStripe\\Config\\": "packages/config/src/",
+            "SteelStripe\\Versioning\\": "packages/versioning/src/",
+            "App\\": "packages/installer/app/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SteelStripe\\Tests\\": "tests/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/*"
+        }
+    ],
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "serve": [
+            "@php -S localhost:8000 -t packages/installer/public packages/installer/public/index.php"
+        ]
+    }
+}

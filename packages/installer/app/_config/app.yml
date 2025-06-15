@@ -1,0 +1,20 @@
+---
+Name: app
+---
+# Application Name
+name: 'SteelStripe Application'
+
+# Application Environment
+env: '${APP_ENV:production}'
+
+# Application Debug Mode
+debug: '${APP_DEBUG:false}'
+
+# Application URL
+url: '${APP_URL:http://localhost}'
+
+# Application Timezone
+timezone: 'UTC'
+
+# Application Locale Configuration
+locale: 'en'

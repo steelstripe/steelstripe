@@ -1,0 +1,53 @@
+# Composer
+/vendor/
+composer.lock
+.phpunit.result.cache
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Build and cache directories
+/build/
+/cache/
+/logs/
+/tmp/
+*.cache
+*.log
+
+# Test coverage
+/coverage/
+.phpunit.cache/
+
+# Application specific
+/public/assets/
+/public/uploads/
+/public/cache/
+
+# Package specific
+/packages/*/vendor/
+/packages/*/composer.lock
+/packages/*/build/
+/packages/*/cache/
+/packages/*/logs/
+/packages/*/tmp/
+/packages/*/coverage/
+
+# Keep package directories
+!/packages/framework/
+!/packages/orm/
+!/packages/assets/
+!/packages/config/
+!/packages/versioning/
+!/packages/installer/
